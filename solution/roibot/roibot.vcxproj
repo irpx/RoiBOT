@@ -11,7 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\source\roibot\ChatBot.cpp" />
     <ClCompile Include="..\..\source\roibot\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\roibot\ChatBot.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81A2783E-B287-4836-8B90-C95234646903}</ProjectGuid>
@@ -45,12 +49,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)..\output\$(ProjectName)\$(Configuration)\</OutDir>
-    <IncludePath>$(ProjectDir)\..\..\source\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\..\..\source\;$(IncludePath);$(SolutionDir)..\external\socket.io-client-cpp-master\src\;</IncludePath>
+    <LibraryPath>$(SolutionDir)..\external\boost_1_57_0\stage\lib\;$(SolutionDir)..\output\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)..\output\$(ProjectName)\$(Configuration)\</OutDir>
-    <IncludePath>$(ProjectDir)\..\..\source\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\..\..\source\;$(IncludePath);$(SolutionDir)..\external\socket.io-client-cpp-master\src\;</IncludePath>
+    <LibraryPath>$(SolutionDir)..\external\boost_1_57_0\stage\lib\;$(SolutionDir)..\output\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -63,6 +69,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);socketclient.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,6 +87,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);socketclient.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
