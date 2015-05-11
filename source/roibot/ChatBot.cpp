@@ -1,5 +1,6 @@
 #include "ChatBot.h"
 #include "socketclient/client.hpp"
+#include "../util/StringUtils.h"
 
 ChatBot::ChatBot(Client& client, std::string name, std::string uid)
 	: m_client(client)
@@ -7,9 +8,9 @@ ChatBot::ChatBot(Client& client, std::string name, std::string uid)
 	, m_uid(uid)
 {
 	//TODO setup callbacks
+
 	/*
-	
-	/*
+	http://www.omdbapi.com/?t=crossroads&y=&plot=short&r=json
 
 	sio::socket::event_listener_aux m_onJoinChannel;
 	sio::socket::event_listener_aux m_onChat;
@@ -188,18 +189,73 @@ ChatBot::ChatBot(Client& client, std::string name, std::string uid)
 	getSocket()->emit("chat message", m_channel + "|" + mystring);
 	}
 	}
-
 	*/
 
-	*/
+	m_client.addCallback("your_channel", [&](std::string data)
+	{
+		m_channel = data;
+		m_client.emit("chat message", "|/join " + m_channel);
+		//m_client.emit("chat message", m_channel + "|moi");
+	});
+	m_client.addCallback("chat message", [&](std::string data)
+	{
+		std::vector<std::string> chat = StringUtils::split(data, '|');
+		int time = 0;
+		int chan = 1;
+		int name = 2;
+		int msg = 3;
+		if (chat[chan] == m_channel)
+		{
+			std::cout << "[ " << chat[time] << " ] " << chat[name] << ": " << chat[msg] << std::endl;
+		}
+		else
+		{
+			std::cout << std::endl << " - " << chat[chan] << " - [ " << chat[time] << " ] " << chat[name] << ": " << chat[msg] << std::endl;
+		}
+	});
 
 	m_client.setOnConnect([&]()
 	{
 		m_client.emit("login", m_uid);
+		m_client.emit("chat message", "|/nick " + m_name);
 	});
 }
 
-
 ChatBot::~ChatBot()
 {
+}
+
+void ChatBot::addLocalCommand(std::string name, std::function<void(std::string)> command)
+{
+	m_localCommands.insert(std::make_pair(name, command));
+}
+
+void ChatBot::addChatCommand(std::string name, std::function<void(std::string)> command)
+{
+	m_chatCommands.insert(std::make_pair(name, command));
+}
+
+void ChatBot::command(std::string command)
+{
+	size_t pos = command.find('/');
+	if (pos == 0)
+	{
+		pos = command.find(' ');
+		std::string data = command.substr(pos + 1);
+		std::string localCommand = command.substr(1, pos-1);
+
+		auto it = m_localCommands.find(localCommand.c_str());
+		if (it != m_localCommands.end())
+		{
+			auto func = it->second;
+			func(data);
+		}
+		return;
+	}
+	send(m_channel + "|" + command);
+}
+
+void ChatBot::send(std::string message)
+{
+	m_client.emit("chat message", message);
 }

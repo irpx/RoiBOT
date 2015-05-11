@@ -27,12 +27,49 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
-
 	//std::cout << "Name: " << name << " Uid: " << uid << " Url: " << url << std::endl;
+
+	name = "BobTheBot";
+	uid = "135284522";
+	url = "http://urtela.redlynx.com:3002";
+
 	Client client;
 	ChatBot bot(client, name, uid);
 	client.connect(url);
-	//client.run();
+
+	bot.addLocalCommand("join",[&](std::string data)
+	{
+		bot.send("|/join " + data);
+	});
+
+	bot.addLocalCommand("nick", [&](std::string data)
+	{
+		bot.setName(data);
+		bot.send("|/nick " + data);
+	});
+
+	bot.addLocalCommand("channel", [&](std::string data)
+	{
+		bot.setChannel(data);
+	});
+
+	bot.addLocalCommand("chat", [&](std::string data)
+	{
+		bot.send(data);
+	});
+
+	bot.addLocalCommand("info", [&](std::string data)
+	{
+		std::cout << "I am bot: " << bot.getName() << " uid: " << bot.getUID() << " channel: " << bot.getChannel() << std::endl;
+	});
+
+	while (true)
+	{
+		std::string mystring;
+		std::getline(std::cin, mystring);
+
+		bot.command(mystring);
+	}
 
 	return 0;
 }
