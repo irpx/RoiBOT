@@ -8,7 +8,7 @@ class Client;
 class ChatBot
 {
 public:
-	ChatBot(Client& client,std::string name, std::string uid);
+	ChatBot(Client& client, std::string name, std::string uid, std::string channel);
 	~ChatBot();
 
 	void command(std::string command);
@@ -23,12 +23,14 @@ public:
 	std::string getChannel(){ return m_channel; };
 	void setName(std::string n){ m_name = n; };
 private:
+	void onChat(std::string chat);
 	std::string						m_channel;
 	std::string						m_name;
 	std::string						m_uid;
 
 	std::map<std::string, std::function<void(std::string)>>	m_localCommands;
 	std::map<std::string, std::function<void(std::string)>>	m_chatCommands;
+
 	Client& m_client;
 };
 

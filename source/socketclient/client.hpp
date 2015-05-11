@@ -20,12 +20,14 @@ public:
 	{
 		m_client.connect(url);
 	}
-	
 	void onConnected()
 	{
 		std::cout << "Connected..." << std::endl;
+		if (m_onConnect)
+		{
+			m_onConnect();
+		}
 	};
-	
 	void onClose(sio::client::close_reason const& reason)
 	{
 		std::cout << "Closed reason:" << reason << std::endl;
@@ -45,7 +47,7 @@ public:
 	};
 	void setOnConnect(std::function<void(void)> oncon)
 	{
-		m_onConnect;
+		m_onConnect = oncon;
 	};
 private:
 	std::map<std::string, std::function<void(std::string)>>	m_callbacks;

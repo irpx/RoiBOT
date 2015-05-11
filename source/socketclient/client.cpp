@@ -15,7 +15,6 @@ Client::Client()
 			func(message);
 		}
 	};
-
 	auto current_socket = getSocket();
 	m_client.set_open_listener(std::bind(&Client::onConnected, this));
 	m_client.set_close_listener(std::bind(&Client::onClose, this, std::placeholders::_1));
