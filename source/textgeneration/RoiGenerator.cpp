@@ -134,3 +134,10 @@ void RoiGenerator::learn(std::string word)
 
 	m_learnings << word << std::endl;
 }
+
+std::string RoiGenerator::getRandomWord()
+{
+	int r = int((static_cast<float>(rand()) / 32767.f)*allWords.size());
+	auto random_it = std::next(std::begin(allWords), r);
+	return *random_it;
+}

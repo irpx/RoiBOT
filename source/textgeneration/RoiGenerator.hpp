@@ -18,6 +18,7 @@ public:
 	size_t getTotalWordCount(){ return allWords.size(); };
 	int getLearnedWordCount(){ return m_learnCount; };
 	int getRoiCount(){ return m_roiCount; };
+	std::string getRandomWord();
 private:
 	std::ofstream				m_learnings;
 	int m_learnCount;

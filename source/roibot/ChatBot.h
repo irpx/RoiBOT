@@ -13,6 +13,7 @@ public:
 
 	void command(std::string command);
 	void send(std::string message);
+	void sendChat(std::string chat);
 	
 	void addLocalCommand(std::string name, std::function<void(std::string)> command);
 	void addChatCommand(std::string name, std::function<void(std::string)> command);
@@ -22,6 +23,7 @@ public:
 	std::string getUID(){ return m_uid; };
 	std::string getChannel(){ return m_channel; };
 	void setName(std::string n){ m_name = n; };
+	
 private:
 	void onChat(std::string chat);
 	std::string						m_channel;

@@ -13,9 +13,11 @@
   <ItemGroup>
     <ClCompile Include="..\..\source\roibot\ChatBot.cpp" />
     <ClCompile Include="..\..\source\roibot\main.cpp" />
+    <ClCompile Include="..\..\source\textgeneration\RoiGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\source\roibot\ChatBot.h" />
+    <ClInclude Include="..\..\source\textgeneration\RoiGenerator.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81A2783E-B287-4836-8B90-C95234646903}</ProjectGuid>

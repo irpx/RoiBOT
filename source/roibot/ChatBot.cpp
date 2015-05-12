@@ -86,3 +86,8 @@ void ChatBot::onChat(std::string chat)
 		func(chat);
 	}
 }
+
+void ChatBot::sendChat(std::string chat)
+{
+	send(m_channel + "|" + chat);
+}
