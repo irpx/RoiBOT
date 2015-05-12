@@ -21,6 +21,8 @@ ChatBot::ChatBot(Client& client, std::string name, std::string uid, std::string 
 		int chan = 1;
 		int name = 2;
 		int msg = 3;
+
+		if (chat[name] == m_name) return;
 		
 		if (chat[chan] == m_channel)
 		{
