@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F273A9F-EAA0-40FD-8F3B-941C65CC274E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GameDevClicker</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\output\lib\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\output\lib\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\gamedevclicker\Entity.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\EntityContainer.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\EntityProperties.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\GameChatMessage.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\GameDevClickerMMO.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\GameMessage.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\GameStats.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\Player.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\PlayerActionMessage.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\PlayerMoveMessage.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\PlayerTask.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\Room.cpp" />
+    <ClCompile Include="..\..\source\gamedevclicker\StudioDungeon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\gamedevclicker\Entity.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\EntityContainer.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\EntityProperties.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\GameChatMessage.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\GameDevClickerMMO.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\GameMessage.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\GameStats.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\Player.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\PlayerActionMessage.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\PlayerMoveMessage.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\PlayerTask.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\Room.h" />
+    <ClInclude Include="..\..\source\gamedevclicker\StudioDungeon.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

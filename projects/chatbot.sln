@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "roibot", "roibot\roibot.vcxproj", "{81A2783E-B287-4836-8B90-C95234646903}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E51918CD-CD8E-464E-B44E-CFDC536A999C} = {E51918CD-CD8E-464E-B44E-CFDC536A999C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "socketclient", "socketclient\socketclient.vcxproj", "{E51918CD-CD8E-464E-B44E-CFDC536A999C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameDevClicker", "GameDevClicker\GameDevClicker.vcxproj", "{3F273A9F-EAA0-40FD-8F3B-941C65CC274E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlashServer", "FlashServer\FlashServer.vcxproj", "{46F326BA-8066-41BE-90D9-89AD14B1B42B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utils", "Utils\Utils.vcxproj", "{BE2B2A80-2535-45B8-9ED4-685DF07DACC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameDevClickerServer", "GameDevClickerServer\GameDevClickerServer.vcxproj", "{C64F0BC9-5843-496A-98FC-997BE64281FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3F273A9F-EAA0-40FD-8F3B-941C65CC274E} = {3F273A9F-EAA0-40FD-8F3B-941C65CC274E}
+		{46F326BA-8066-41BE-90D9-89AD14B1B42B} = {46F326BA-8066-41BE-90D9-89AD14B1B42B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81A2783E-B287-4836-8B90-C95234646903}.Debug|Win32.ActiveCfg = Debug|Win32
+		{81A2783E-B287-4836-8B90-C95234646903}.Debug|Win32.Build.0 = Debug|Win32
+		{81A2783E-B287-4836-8B90-C95234646903}.Release|Win32.ActiveCfg = Release|Win32
+		{81A2783E-B287-4836-8B90-C95234646903}.Release|Win32.Build.0 = Release|Win32
+		{E51918CD-CD8E-464E-B44E-CFDC536A999C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E51918CD-CD8E-464E-B44E-CFDC536A999C}.Debug|Win32.Build.0 = Debug|Win32
+		{E51918CD-CD8E-464E-B44E-CFDC536A999C}.Release|Win32.ActiveCfg = Release|Win32
+		{E51918CD-CD8E-464E-B44E-CFDC536A999C}.Release|Win32.Build.0 = Release|Win32
+		{3F273A9F-EAA0-40FD-8F3B-941C65CC274E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3F273A9F-EAA0-40FD-8F3B-941C65CC274E}.Debug|Win32.Build.0 = Debug|Win32
+		{3F273A9F-EAA0-40FD-8F3B-941C65CC274E}.Release|Win32.ActiveCfg = Release|Win32
+		{3F273A9F-EAA0-40FD-8F3B-941C65CC274E}.Release|Win32.Build.0 = Release|Win32
+		{46F326BA-8066-41BE-90D9-89AD14B1B42B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{46F326BA-8066-41BE-90D9-89AD14B1B42B}.Debug|Win32.Build.0 = Debug|Win32
+		{46F326BA-8066-41BE-90D9-89AD14B1B42B}.Release|Win32.ActiveCfg = Release|Win32
+		{46F326BA-8066-41BE-90D9-89AD14B1B42B}.Release|Win32.Build.0 = Release|Win32
+		{BE2B2A80-2535-45B8-9ED4-685DF07DACC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE2B2A80-2535-45B8-9ED4-685DF07DACC2}.Debug|Win32.Build.0 = Debug|Win32
+		{BE2B2A80-2535-45B8-9ED4-685DF07DACC2}.Release|Win32.ActiveCfg = Release|Win32
+		{BE2B2A80-2535-45B8-9ED4-685DF07DACC2}.Release|Win32.Build.0 = Release|Win32
+		{C64F0BC9-5843-496A-98FC-997BE64281FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C64F0BC9-5843-496A-98FC-997BE64281FC}.Debug|Win32.Build.0 = Debug|Win32
+		{C64F0BC9-5843-496A-98FC-997BE64281FC}.Release|Win32.ActiveCfg = Release|Win32
+		{C64F0BC9-5843-496A-98FC-997BE64281FC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
